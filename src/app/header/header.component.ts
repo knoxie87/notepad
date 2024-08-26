@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule
+import {MatTooltip} from '@angular/material/tooltip';
+import {MatButton} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatIconModule], // Add MatIconModule to imports
+  imports: [MatTooltip, MatButtonModule, MatIconModule, MatDividerModule, MatButton], // Add MatIconModule to imports
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
