@@ -1,18 +1,18 @@
-<header>
-    <nav>
-        <ul class="flex flex-row gap-2">
-            <li class="example-button-row">
-                <button color="primary" mat-flat-button>Save Note</button>
-            </li>
-            <li class="example-button-row">
-                <button color="primary" mat-flat-button>Delete Note</button>
-            </li>
-            <li class="example-button-row">
-                <button color="primary" mat-flat-button>Delete Selected Note</button>
-            </li>
-            <li class="example-button-row">
-                <button color="primary" mat-flat-button>Create Note</button>
-            </li>
-        </ul>
-    </nav>
-</header>
+<ng-template ngFor let-item [ngForOf]="items" let-i="index">
+    <form class="border-solid border-2 flex flex-col w-56 h-56" cdkDrag>
+        <div class=" w-full flex flex-row justify-between">
+            <button mat-icon-button (click)="deleteItem(item)">
+                <mat-icon>close</mat-icon>
+            </button>
+            <button (click)="updateItem(item)" class="">
+                <mat-icon>save</mat-icon>
+            </button>
+        </div>
+        <mat-form-field class="example-full-width">
+            <input #mySubject (input)="item.subject = mySubject.value" value={{item.subject}}>
+        </mat-form-field>
+        <mat-form-field class="h-full">
+            <textarea #myNote (input)="item.note = myNote.value" value="{{item.note}}" class="h-full"></textarea>
+        </mat-form-field>
+    </form>
+</ng-template>
