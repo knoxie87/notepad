@@ -12,13 +12,13 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-notes',
   standalone: true,
   imports: [MatTooltip, NgFor, DragDropModule, MatFormFieldModule, MatInputModule, DragDropModule, MatButtonModule, MatIconModule, MatDividerModule, MatButton], // Add MatIconModule to imports
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  templateUrl: './notes.component.html',
+  styleUrl: './notes.component.scss'
 })
-export class HeaderComponent {
+export class NotesComponent {
   ngOnInit() {
     this.getItems();
   }
